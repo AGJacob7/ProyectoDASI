@@ -1,0 +1,12 @@
+C:\Users\leo-j\source\repos\SistemaVehiculos\Datos\bin\Debug\Datos.dll
+C:\Users\leo-j\source\repos\SistemaVehiculos\Datos\bin\Debug\Datos.pdb
+C:\Users\leo-j\source\repos\SistemaVehiculos\Datos\bin\Debug\AccesoDatos.dll
+C:\Users\leo-j\source\repos\SistemaVehiculos\Datos\bin\Debug\EntityFramework.dll
+C:\Users\leo-j\source\repos\SistemaVehiculos\Datos\bin\Debug\AccesoDatos.pdb
+C:\Users\leo-j\source\repos\SistemaVehiculos\Datos\bin\Debug\AccesoDatos.dll.config
+C:\Users\leo-j\source\repos\SistemaVehiculos\Datos\bin\Debug\EntityFramework.xml
+C:\Users\leo-j\source\repos\SistemaVehiculos\Datos\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\leo-j\source\repos\SistemaVehiculos\Datos\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\leo-j\source\repos\SistemaVehiculos\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\leo-j\source\repos\SistemaVehiculos\Datos\obj\Debug\Datos.dll
+C:\Users\leo-j\source\repos\SistemaVehiculos\Datos\obj\Debug\Datos.pdb

@@ -1,0 +1,14 @@
+C:\Users\leo-j\source\repos\SistemaVehiculos\Logica\bin\Debug\Logica.dll
+C:\Users\leo-j\source\repos\SistemaVehiculos\Logica\bin\Debug\Logica.pdb
+C:\Users\leo-j\source\repos\SistemaVehiculos\Logica\bin\Debug\AccesoDatos.dll
+C:\Users\leo-j\source\repos\SistemaVehiculos\Logica\bin\Debug\Datos.dll
+C:\Users\leo-j\source\repos\SistemaVehiculos\Logica\bin\Debug\EntityFramework.dll
+C:\Users\leo-j\source\repos\SistemaVehiculos\Logica\bin\Debug\AccesoDatos.pdb
+C:\Users\leo-j\source\repos\SistemaVehiculos\Logica\bin\Debug\AccesoDatos.dll.config
+C:\Users\leo-j\source\repos\SistemaVehiculos\Logica\bin\Debug\Datos.pdb
+C:\Users\leo-j\source\repos\SistemaVehiculos\Logica\bin\Debug\EntityFramework.xml
+C:\Users\leo-j\source\repos\SistemaVehiculos\Logica\obj\Debug\Logica.csproj.AssemblyReference.cache
+C:\Users\leo-j\source\repos\SistemaVehiculos\Logica\obj\Debug\Logica.csproj.CoreCompileInputs.cache
+C:\Users\leo-j\source\repos\SistemaVehiculos\Logica\obj\Debug\Logica.csproj.CopyComplete
+C:\Users\leo-j\source\repos\SistemaVehiculos\Logica\obj\Debug\Logica.dll
+C:\Users\leo-j\source\repos\SistemaVehiculos\Logica\obj\Debug\Logica.pdb

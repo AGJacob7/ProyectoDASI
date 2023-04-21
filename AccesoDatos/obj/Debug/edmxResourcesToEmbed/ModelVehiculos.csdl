@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CATEGORIA">
+    <Key>
+      <PropertyRef Name="IDCATEGORIA" />
+    </Key>
+    <Property Name="IDCATEGORIA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMCATEGORIA" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="TIPOCATEGORIA" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ACTIVOCATEGORIA" Type="Int16" />
+    <Property Name="FECHAREGISTROCATEGORIA" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Self.FK_PRODUCTO_PRODUC_CA_CATEGORI" FromRole="CATEGORIA" ToRole="PRODUCTO" />
+  </EntityType>
+  <EntityType Name="CUENTA">
+    <Key>
+      <PropertyRef Name="IDCUENTA" />
+    </Key>
+    <Property Name="IDCUENTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDROL" Type="Int32" Nullable="false" />
+    <Property Name="IDPERSONA" Type="Int32" Nullable="false" />
+    <Property Name="EMAILCUENTA" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="USUACUENTA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CONTRACUENTA" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="FECHARESGISTROCUENTA" Type="DateTime" Precision="0" />
+    <Property Name="ACTIVOCUENTA" Type="Int16" />
+    <NavigationProperty Name="ROL" Relationship="Self.FK_CUENTA_CUE_ROL_ROL" FromRole="CUENTA" ToRole="ROL" />
+    <NavigationProperty Name="PERSONA" Relationship="Self.FK_CUENTA_PER_CUE2_PERSONA" FromRole="CUENTA" ToRole="PERSONA" />
+    <NavigationProperty Name="FACTURA" Relationship="Self.FK_FACTURA_CUEN_FAC_CUENTA" FromRole="CUENTA" ToRole="FACTURA" />
+  </EntityType>
+  <EntityType Name="DETALLEITEM">
+    <Key>
+      <PropertyRef Name="IDDETALLEITEM" />
+    </Key>
+    <Property Name="IDDETALLEITEM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DESCRIPITEM" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CANTIITEM" Type="Int32" />
+    <Property Name="PUNITITEM" Type="Decimal" Precision="37" Scale="2" />
+    <Property Name="PTOTALITEM" Type="Decimal" Precision="37" Scale="2" />
+    <NavigationProperty Name="PRODUC_ITEM" Relationship="Self.FK_PRODUC_I_PRODUC_IT_DETALLEI" FromRole="DETALLEITEM" ToRole="PRODUC_ITEM" />
+    <NavigationProperty Name="VENT_ITEM" Relationship="Self.FK_VENT_ITE_VENT_ITEM_DETALLEI" FromRole="DETALLEITEM" ToRole="VENT_ITEM" />
+  </EntityType>
+  <EntityType Name="DETALLEVENTA">
+    <Key>
+      <PropertyRef Name="IDVENTA" />
+    </Key>
+    <Property Name="IDVENTA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDFACTURA" Type="Int32" Nullable="false" />
+    <Property Name="FECHAVENTA" Type="DateTime" Precision="0" />
+    <Property Name="FORMAPAGOVENTA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="ESTADOPAGOVENTA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="DESCUENTOVENTA" Type="Decimal" Precision="30" Scale="2" />
+    <Property Name="IVAVENTA" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="SUBTOTALVENTA" Type="Decimal" Precision="37" Scale="2" />
+    <Property Name="TOTALVENTA" Type="Decimal" Precision="37" Scale="2" />
+    <NavigationProperty Name="FACTURA" Relationship="Self.FK_DETALLEV_FACT_VENT_FACTURA" FromRole="DETALLEVENTA" ToRole="FACTURA" />
+    <NavigationProperty Name="VENT_ITEM" Relationship="Self.FK_VENT_ITE_VENT_ITEM_DETALLEV" FromRole="DETALLEVENTA" ToRole="VENT_ITEM" />
+  </EntityType>
+  <EntityType Name="FACTURA">
+    <Key>
+      <PropertyRef Name="IDFACTURA" />
+    </Key>
+    <Property Name="IDFACTURA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDCUENTA" Type="Int32" Nullable="false" />
+    <Property Name="FECHAFACTURA" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="CUENTA" Relationship="Self.FK_FACTURA_CUEN_FAC_CUENTA" FromRole="FACTURA" ToRole="CUENTA" />
+    <NavigationProperty Name="DETALLEVENTA" Relationship="Self.FK_DETALLEV_FACT_VENT_FACTURA" FromRole="FACTURA" ToRole="DETALLEVENTA" />
+  </EntityType>
+  <EntityType Name="PERSONA">
+    <Key>
+      <PropertyRef Name="IDPERSONA" />
+    </Key>
+    <Property Name="IDPERSONA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOMPERSONA" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="APEPERSONA" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="IDENTIPERSONA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TELPERSONA" Type="Int32" />
+    <Property Name="DIRREPERSONA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PAISPERSONA" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="CIUPERSONA" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CUENTA" Relationship="Self.FK_CUENTA_PER_CUE2_PERSONA" FromRole="PERSONA" ToRole="CUENTA" />
+  </EntityType>
+  <EntityType Name="PRODUC_ITEM">
+    <Key>
+      <PropertyRef Name="IDDETALLEITEM" />
+      <PropertyRef Name="IDPRODUCTO" />
+    </Key>
+    <Property Name="IDPRODUC_ITEM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDDETALLEITEM" Type="Int32" Nullable="false" />
+    <Property Name="IDPRODUCTO" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DETALLEITEM" Relationship="Self.FK_PRODUC_I_PRODUC_IT_DETALLEI" FromRole="PRODUC_ITEM" ToRole="DETALLEITEM" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Self.FK_PRODUC_I_PRODUC_IT_PRODUCTO" FromRole="PRODUC_ITEM" ToRole="PRODUCTO" />
+  </EntityType>
+  <EntityType Name="PRODUCTO">
+    <Key>
+      <PropertyRef Name="IDPRODUCTO" />
+    </Key>
+    <Property Name="IDPRODUCTO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDPROVEEDOR" Type="Int32" Nullable="false" />
+    <Property Name="IDCATEGORIA" Type="Int32" Nullable="false" />
+    <Property Name="CODPRODUCTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NOMPRODUCTO" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="MARCAPRODUCTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IMAGENPRODUCTO" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+    <Property Name="ACTIVOPRODUCTO" Type="Int16" />
+    <Property Name="STROCKPRODCUTO" Type="Int32" />
+    <Property Name="DESCRIPPRODUCTO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="PCOMPRAPRODUCTO" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="PVENTAPRODUCTO" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="FECHAREGIDTROPRODUCTO" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="CATEGORIA" Relationship="Self.FK_PRODUCTO_PRODUC_CA_CATEGORI" FromRole="PRODUCTO" ToRole="CATEGORIA" />
+    <NavigationProperty Name="PRODUC_ITEM" Relationship="Self.FK_PRODUC_I_PRODUC_IT_PRODUCTO" FromRole="PRODUCTO" ToRole="PRODUC_ITEM" />
+    <NavigationProperty Name="PROVEEDOR" Relationship="Self.FK_PRODUCTO_PROVEE_PR_PROVEEDO" FromRole="PRODUCTO" ToRole="PROVEEDOR" />
+  </EntityType>
+  <EntityType Name="PROVEEDOR">
+    <Key>
+      <PropertyRef Name="IDPROVEEDOR" />
+    </Key>
+    <Property Name="IDPROVEEDOR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RUCPROVEEDOR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NOMPROVEEDOR" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="EMAILPROVEEDOR" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="TELPROVEEDOR" Type="Int32" />
+    <Property Name="PAISPROVEEDOR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="CIUPROVEEDOR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PRODUCTO" Relationship="Self.FK_PRODUCTO_PROVEE_PR_PROVEEDO" FromRole="PROVEEDOR" ToRole="PRODUCTO" />
+  </EntityType>
+  <EntityType Name="ROL">
+    <Key>
+      <PropertyRef Name="IDROL" />
+    </Key>
+    <Property Name="IDROL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TIPOROL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="CUENTA" Relationship="Self.FK_CUENTA_CUE_ROL_ROL" FromRole="ROL" ToRole="CUENTA" />
+  </EntityType>
+  <EntityType Name="VENT_ITEM">
+    <Key>
+      <PropertyRef Name="IDDETALLEITEM" />
+      <PropertyRef Name="IDVENTA" />
+    </Key>
+    <Property Name="IDVENT_ITEM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IDDETALLEITEM" Type="Int32" Nullable="false" />
+    <Property Name="IDVENTA" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DETALLEITEM" Relationship="Self.FK_VENT_ITE_VENT_ITEM_DETALLEI" FromRole="VENT_ITEM" ToRole="DETALLEITEM" />
+    <NavigationProperty Name="DETALLEVENTA" Relationship="Self.FK_VENT_ITE_VENT_ITEM_DETALLEV" FromRole="VENT_ITEM" ToRole="DETALLEVENTA" />
+  </EntityType>
+  <Association Name="FK_PRODUCTO_PRODUC_CA_CATEGORI">
+    <End Role="CATEGORIA" Type="Self.CATEGORIA" Multiplicity="1" />
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CATEGORIA">
+        <PropertyRef Name="IDCATEGORIA" />
+      </Principal>
+      <Dependent Role="PRODUCTO">
+        <PropertyRef Name="IDCATEGORIA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CUENTA_CUE_ROL_ROL">
+    <End Role="ROL" Type="Self.ROL" Multiplicity="1" />
+    <End Role="CUENTA" Type="Self.CUENTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ROL">
+        <PropertyRef Name="IDROL" />
+      </Principal>
+      <Dependent Role="CUENTA">
+        <PropertyRef Name="IDROL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CUENTA_PER_CUE2_PERSONA">
+    <End Role="PERSONA" Type="Self.PERSONA" Multiplicity="1" />
+    <End Role="CUENTA" Type="Self.CUENTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PERSONA">
+        <PropertyRef Name="IDPERSONA" />
+      </Principal>
+      <Dependent Role="CUENTA">
+        <PropertyRef Name="IDPERSONA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FACTURA_CUEN_FAC_CUENTA">
+    <End Role="CUENTA" Type="Self.CUENTA" Multiplicity="1" />
+    <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CUENTA">
+        <PropertyRef Name="IDCUENTA" />
+      </Principal>
+      <Dependent Role="FACTURA">
+        <PropertyRef Name="IDCUENTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRODUC_I_PRODUC_IT_DETALLEI">
+    <End Role="DETALLEITEM" Type="Self.DETALLEITEM" Multiplicity="1" />
+    <End Role="PRODUC_ITEM" Type="Self.PRODUC_ITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DETALLEITEM">
+        <PropertyRef Name="IDDETALLEITEM" />
+      </Principal>
+      <Dependent Role="PRODUC_ITEM">
+        <PropertyRef Name="IDDETALLEITEM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VENT_ITE_VENT_ITEM_DETALLEI">
+    <End Role="DETALLEITEM" Type="Self.DETALLEITEM" Multiplicity="1" />
+    <End Role="VENT_ITEM" Type="Self.VENT_ITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DETALLEITEM">
+        <PropertyRef Name="IDDETALLEITEM" />
+      </Principal>
+      <Dependent Role="VENT_ITEM">
+        <PropertyRef Name="IDDETALLEITEM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DETALLEV_FACT_VENT_FACTURA">
+    <End Role="FACTURA" Type="Self.FACTURA" Multiplicity="1" />
+    <End Role="DETALLEVENTA" Type="Self.DETALLEVENTA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FACTURA">
+        <PropertyRef Name="IDFACTURA" />
+      </Principal>
+      <Dependent Role="DETALLEVENTA">
+        <PropertyRef Name="IDFACTURA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VENT_ITE_VENT_ITEM_DETALLEV">
+    <End Role="DETALLEVENTA" Type="Self.DETALLEVENTA" Multiplicity="1" />
+    <End Role="VENT_ITEM" Type="Self.VENT_ITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DETALLEVENTA">
+        <PropertyRef Name="IDVENTA" />
+      </Principal>
+      <Dependent Role="VENT_ITEM">
+        <PropertyRef Name="IDVENTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRODUC_I_PRODUC_IT_PRODUCTO">
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="1" />
+    <End Role="PRODUC_ITEM" Type="Self.PRODUC_ITEM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PRODUCTO">
+        <PropertyRef Name="IDPRODUCTO" />
+      </Principal>
+      <Dependent Role="PRODUC_ITEM">
+        <PropertyRef Name="IDPRODUCTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PRODUCTO_PROVEE_PR_PROVEEDO">
+    <End Role="PROVEEDOR" Type="Self.PROVEEDOR" Multiplicity="1" />
+    <End Role="PRODUCTO" Type="Self.PRODUCTO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PROVEEDOR">
+        <PropertyRef Name="IDPROVEEDOR" />
+      </Principal>
+      <Dependent Role="PRODUCTO">
+        <PropertyRef Name="IDPROVEEDOR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EntitiesVehiculos" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CATEGORIA" EntityType="Self.CATEGORIA" />
+    <EntitySet Name="CUENTA" EntityType="Self.CUENTA" />
+    <EntitySet Name="DETALLEITEM" EntityType="Self.DETALLEITEM" />
+    <EntitySet Name="DETALLEVENTA" EntityType="Self.DETALLEVENTA" />
+    <EntitySet Name="FACTURA" EntityType="Self.FACTURA" />
+    <EntitySet Name="PERSONA" EntityType="Self.PERSONA" />
+    <EntitySet Name="PRODUC_ITEM" EntityType="Self.PRODUC_ITEM" />
+    <EntitySet Name="PRODUCTO" EntityType="Self.PRODUCTO" />
+    <EntitySet Name="PROVEEDOR" EntityType="Self.PROVEEDOR" />
+    <EntitySet Name="ROL" EntityType="Self.ROL" />
+    <EntitySet Name="VENT_ITEM" EntityType="Self.VENT_ITEM" />
+    <AssociationSet Name="FK_PRODUCTO_PRODUC_CA_CATEGORI" Association="Self.FK_PRODUCTO_PRODUC_CA_CATEGORI">
+      <End Role="CATEGORIA" EntitySet="CATEGORIA" />
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CUENTA_CUE_ROL_ROL" Association="Self.FK_CUENTA_CUE_ROL_ROL">
+      <End Role="ROL" EntitySet="ROL" />
+      <End Role="CUENTA" EntitySet="CUENTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CUENTA_PER_CUE2_PERSONA" Association="Self.FK_CUENTA_PER_CUE2_PERSONA">
+      <End Role="PERSONA" EntitySet="PERSONA" />
+      <End Role="CUENTA" EntitySet="CUENTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FACTURA_CUEN_FAC_CUENTA" Association="Self.FK_FACTURA_CUEN_FAC_CUENTA">
+      <End Role="CUENTA" EntitySet="CUENTA" />
+      <End Role="FACTURA" EntitySet="FACTURA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRODUC_I_PRODUC_IT_DETALLEI" Association="Self.FK_PRODUC_I_PRODUC_IT_DETALLEI">
+      <End Role="DETALLEITEM" EntitySet="DETALLEITEM" />
+      <End Role="PRODUC_ITEM" EntitySet="PRODUC_ITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VENT_ITE_VENT_ITEM_DETALLEI" Association="Self.FK_VENT_ITE_VENT_ITEM_DETALLEI">
+      <End Role="DETALLEITEM" EntitySet="DETALLEITEM" />
+      <End Role="VENT_ITEM" EntitySet="VENT_ITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DETALLEV_FACT_VENT_FACTURA" Association="Self.FK_DETALLEV_FACT_VENT_FACTURA">
+      <End Role="FACTURA" EntitySet="FACTURA" />
+      <End Role="DETALLEVENTA" EntitySet="DETALLEVENTA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VENT_ITE_VENT_ITEM_DETALLEV" Association="Self.FK_VENT_ITE_VENT_ITEM_DETALLEV">
+      <End Role="DETALLEVENTA" EntitySet="DETALLEVENTA" />
+      <End Role="VENT_ITEM" EntitySet="VENT_ITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRODUC_I_PRODUC_IT_PRODUCTO" Association="Self.FK_PRODUC_I_PRODUC_IT_PRODUCTO">
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+      <End Role="PRODUC_ITEM" EntitySet="PRODUC_ITEM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PRODUCTO_PROVEE_PR_PROVEEDO" Association="Self.FK_PRODUCTO_PROVEE_PR_PROVEEDO">
+      <End Role="PROVEEDOR" EntitySet="PROVEEDOR" />
+      <End Role="PRODUCTO" EntitySet="PRODUCTO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

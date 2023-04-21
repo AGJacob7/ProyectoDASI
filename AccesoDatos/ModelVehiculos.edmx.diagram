@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2a63739209f54dfc99c2f5c39ad260a0" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.CATEGORIA" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CUENTA" Width="1.5" PointX="8" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DETALLEITEM" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.DETALLEVENTA" Width="1.5" PointX="12.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FACTURA" Width="1.5" PointX="10.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PERSONA" Width="1.5" PointX="5.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRODUC_ITEM" Width="1.5" PointX="5.25" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PRODUCTO" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.PROVEEDOR" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ROL" Width="1.5" PointX="5.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.VENT_ITEM" Width="1.5" PointX="14.75" PointY="6.625" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_PRODUCTO_PRODUC_CA_CATEGORI" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CUENTA_CUE_ROL_ROL" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_CUENTA_PER_CUE2_PERSONA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_FACTURA_CUEN_FAC_CUENTA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PRODUC_I_PRODUC_IT_DETALLEI" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_VENT_ITE_VENT_ITEM_DETALLEI" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_DETALLEV_FACT_VENT_FACTURA" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_VENT_ITE_VENT_ITEM_DETALLEV" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PRODUC_I_PRODUC_IT_PRODUCTO" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_PRODUCTO_PROVEE_PR_PROVEEDO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,12 @@
+C:\Users\leo-j\source\repos\SistemaVehiculos\AccesoDatos\bin\Debug\AccesoDatos.dll.config
+C:\Users\leo-j\source\repos\SistemaVehiculos\AccesoDatos\bin\Debug\AccesoDatos.dll
+C:\Users\leo-j\source\repos\SistemaVehiculos\AccesoDatos\bin\Debug\AccesoDatos.pdb
+C:\Users\leo-j\source\repos\SistemaVehiculos\AccesoDatos\bin\Debug\EntityFramework.dll
+C:\Users\leo-j\source\repos\SistemaVehiculos\AccesoDatos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\leo-j\source\repos\SistemaVehiculos\AccesoDatos\bin\Debug\EntityFramework.xml
+C:\Users\leo-j\source\repos\SistemaVehiculos\AccesoDatos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\leo-j\source\repos\SistemaVehiculos\AccesoDatos\obj\Debug\AccesoDatos.csproj.AssemblyReference.cache
+C:\Users\leo-j\source\repos\SistemaVehiculos\AccesoDatos\obj\Debug\AccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\leo-j\source\repos\SistemaVehiculos\AccesoDatos\obj\Debug\AccesoDatos.csproj.CopyComplete
+C:\Users\leo-j\source\repos\SistemaVehiculos\AccesoDatos\obj\Debug\AccesoDatos.dll
+C:\Users\leo-j\source\repos\SistemaVehiculos\AccesoDatos\obj\Debug\AccesoDatos.pdb
